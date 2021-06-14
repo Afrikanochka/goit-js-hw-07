@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const list = document.querySelector('#gallery');
+
+// const listElems = document.createElement('li');
+
+const imgMarkup = images.map(({ url, alt }) => `
+  <li>
+  <img ${url} ${alt}>
+  </li>,
+`
+);
+console.log(imgMarkup);
