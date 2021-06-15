@@ -13,16 +13,15 @@ const images = [
   },
 ];
 
-const listElems = document.querySelector('#gallery');
+const galleryElems = document.querySelector('#gallery');
 
-// const listElem = document.createElement('li');
-
-const imgMarkup = images.map(({ url, alt }) => `
+const newImgElem = ({ url, alt }) => `
   <li>
-  <img ${url} ${alt}>
-  </li>,
-`
-);
-listElems.insertAdjacentHTML('beforeend', imgMarkup.join(''));
+  <img src="${url}" alt="${alt}" width = 400px height = 240px>
+  </li>
+`;
+const imgMarkup = images
+  .reduce((acc, image) => acc + newImgElem(image), "");
 
-console.log(imgMarkup);
+galleryElems.insertAdjacentHTML('beforeend', imgMarkup);
+galleryElems.setAttribute('style', 'list-style-type:none; display: flex;');
