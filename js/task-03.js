@@ -13,9 +13,9 @@ const images = [
   },
 ];
 
-const list = document.querySelector('#gallery');
+const listElems = document.querySelector('#gallery');
 
-// const listElems = document.createElement('li');
+// const listElem = document.createElement('li');
 
 const imgMarkup = images.map(({ url, alt }) => `
   <li>
@@ -23,4 +23,6 @@ const imgMarkup = images.map(({ url, alt }) => `
   </li>,
 `
 );
+listElems.insertAdjacentHTML('beforeend', imgMarkup.join(''));
+
 console.log(imgMarkup);
