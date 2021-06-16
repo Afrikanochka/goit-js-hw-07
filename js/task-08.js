@@ -22,9 +22,12 @@ function createBoxes(amount) {
         newDiv.classList.add('item');
         arrMarkup.push(newDiv);
         size += 10;
+        const randomIntRgb = [random(0, 256), random(0, 256), random(0, 256)];
+        newDiv.style.borderColor = `rgb(${randomIntRgb})`;
     }
     refs.boxes.append(...arrMarkup);
     console.log(arrMarkup);
+    
 }
 function destroyBoxes() {
   boxes.innerHTML = '';
@@ -33,5 +36,3 @@ function destroyBoxes() {
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1));    
 }
-// const randomIntRgb = [random(0, 256), random(0, 256), random(0, 256)];
-// const randomInt = document.querySelector('.item').style.border = `rgb(${randomIntRgb})`;
