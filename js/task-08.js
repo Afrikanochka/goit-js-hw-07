@@ -33,5 +33,5 @@ function destroyBoxes() {
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1));    
 }
-
-console.log(random(0, 255));
+// const randomIntRgb = [random(0, 256), random(0, 256), random(0, 256)];
+// const randomInt = document.querySelector('.item').style.border = `rgb(${randomIntRgb})`;
